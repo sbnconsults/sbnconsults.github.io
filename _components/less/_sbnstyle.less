@@ -7,6 +7,7 @@
 
 body {
   text-align: center;
+  font-family: Sans-Serif;
 }
 
 .container {
@@ -20,11 +21,15 @@ body {
 .navbar {
   min-height: 100px;
   padding: 40px 0px 0px 0px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .navheadr-brand {
   height: 100px;
   float: left;
+
 }
 
 .navheadr-nav {
@@ -64,25 +69,163 @@ body {
 }
 
 
+
+.box-wrapper {
+  border: solid 1px #dbb8b6;
+  .border-radius(25px);
+  background-color: #eae0e0;
+  padding: 30px;
+}
+
+.no-rounded {
+  .border-radius(0px);
+}
+
+
+.box-wrapper .main-box {
+  overflow:hidden;
+}
+
+.main-box > .col-md-7{
+  background-color:#dbb8b6;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  overflow:hidden;
+}
+
+
+.main-box > .col-md-7, .main-box > .col-md-5, 
+.main-box > .col-md-7 > .col-md-4, .main-box > .col-md-7 >.col-md-8{
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+
+}
+
+.main-box > .col-md-7 img{
+  opacity: .7;
+}
+
+.main-box > .col-md-7 h3{
+  text-align:center;
+}
+
+.main-box > .col-md-5{
+  background-color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.main-box .box-header{
+  text-align: left;
+}
+
+.main-box .box-header .col-md-12{
+  padding: 30px;
+  background-color:#dbb8b6;
+
+}
+
+.main-box .box-header .col-md-12 .col-md-7{
+margin-left:auto;
+margin-right:auto;
+}
+
+.main-box .box-body {
+  background-color:#ffffff;
+}
+
+
+.main-box .box-body .col-md-12{
+  background-color:#ffffff;
+  padding: 80px;
+
+}
+
+.main-box form h3{
+  text-align:center;
+}
+
+.icon-circle {  
+  .border-radius(50%);  
+  width: 140px;
+  height: 140px;
+}
+
+.main-box .box-header .icon-circle {
+  border: solid 1px #b78e8c;
+}
+
+.btn-default {
+  color: #d28581;
+  font-weight: bold;
+}
+
+.btn-default:hover{
+    color: #d28581;
+  font-weight: bold;
+}
+
+.main-box .btn-default {
+  color: #000000;
+}
+
+.main-box .btn-default:hover{
+  color: #000000;
+}
+
+/*
+[id^=input] {
+  width: 70%;
+
+} */
 /* Carousel
  * --------- */
 
 .carousel {
-  margin-bottom: 60px;
+  margin-bottom: 100px;
   .border-radius(25px);  
   overflow:hidden;
 }
+
 .carousel-caption {
-  margin-bottom: 100px;
+  padding-top: 50px;
+  padding-left: 0px;
   font-size: 60px;
+  position:absolute;
+  bottom: 20px;
+  z-index: 10;
+  height:100%;
+  text-align: left;
+ /* border: solid 1px; */
+  vertical-align: middle;
 }
 
+
+/* Declare heights because of positioning of img element 
+.carousel .item {
+  height: 100%;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+*/
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 20px;
+.marketing {
+    margin-bottom: 100px;
+}
+
+.marketing .col-md-4 {
   text-align: center;
 }
 
@@ -90,46 +233,47 @@ body {
   font-weight: normal;
 }
 
-.marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
+.marketing .col-md-4 p {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-.marketing .icon-circle {  
-  border-radius: 50%;
+.marketing .icon-circle {
   border: solid 1px;
   border-color: #dbb8b6;
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
 }
-
- .marketing .btn-default {
-  border-color: #dbb8b6; 
-  color: #d28581;
-  font-weight: bold;
-}
-
 
 
 /* Featurettes
 ------------------------- */
 
-.featurette-divider {
-  border: 1px dotted #5F5F5F;
+.main-box .col-md-4 {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
+.main-box .col-md-4:nth-child(2){
+/* background-color: #ffffff; */
+font-size:16px;
 }
 
-.featurette-image {
-  .border-radius(45px);  
+.main-box .col-md-4 img{
+  height:100%;
+  width:100%;
+  margin-top: 0px;
 
 }
 
+/* Footer
+-------------- */
+footer {
+  margin-top:30px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;  
+}
 
 /* Make Responsive
  *------------------- */
@@ -138,20 +282,60 @@ body {
 
   .carousel {
     margin-bottom: 10px;
-    .border-radius(15px);  
+    .border-radius(15px);
+    vertical-align: middle;
   }
 
   .carousel-caption {
-    margin-bottom: 10px;
     font-size: 30px;
   }
 
   .navheadr-nav > li + li {
     margin-left: 0px;
   }
+/*
+    .main-box >.col-md-7 > h3 {
+    clear: left;
+  }*/
+
 
 }
 
+/*
+@media (min-width: 480px) and (max-width: 768px), (max-width: 480px) {
+
+
+
+ .main-box .col-md-12 .col-md-3, 
+.main-box .col-md-12 .col-md-9 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+ }
+}
+*/
+
+
+@media (min-width: 480px) and (max-width: 991px),(max-width: 480px) {
+/*
+ .break-early{
+  width:400px;
+
+}
+*/
+ .main-box >.col-md-7 > h3 {
+  clear: both;
+}
+ .main-box .col-md-12 .col-md-3, 
+.main-box .col-md-12 .col-md-9,
+.main-box .col-md-7 .col-md-4,
+ .main-box .col-md-7 .col-md-8{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+ }
+
+}
 
 @media (max-width: 768px) {
 
@@ -172,23 +356,6 @@ body {
 
   .navheadr-nav {
     float: none;
-  }
-
-}
-
-
-@media (min-width: 768px) {
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-
-}
-
-@media (min-width: 992px) {
-
-  .featurette-heading {
-    margin-top: 120px;
   }
 
 }
