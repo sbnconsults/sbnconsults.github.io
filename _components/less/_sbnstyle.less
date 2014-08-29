@@ -142,21 +142,53 @@ body {
   margin-bottom: 100px;
   .border-radius(25px);  
   overflow:hidden;
+  z-index: 30;
+
+}
+
+.carousel img{
+  .border-radius(25px);
+  width: 100%;
+  z-index: 20;
 }
 
 .carousel-caption {
-  padding-top: 50px;
+  padding-top: 25%;
   padding-left: 0px;
-  font-size: 60px;
+  opacity: .9;
+  font-size: 40px;
+  font-family: Impact;
   position:absolute;
   bottom: 20px;
   z-index: 10;
   height:100%;
-  text-align: left;
- /* border: solid 1px; */
+  text-align: center;
   vertical-align: middle;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
+.carousel .item {
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -ms-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+}
+
+.carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+.carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
+}
 
 /* Declare heights because of positioning of img element 
 .carousel .item {
@@ -244,7 +276,7 @@ footer {
   }
 
   .carousel-caption {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .navheadr-nav > li + li {
@@ -258,12 +290,17 @@ footer {
 
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+  .carousel-caption {
+    font-size: 35px;
+  }
+}
+
 @media (min-width: 480px) and (max-width: 991px){
   .break-early {
     width:400px;
   }
 }
-
 
 @media (min-width: 480px) and (max-width: 991px),(max-width: 480px) {
 
