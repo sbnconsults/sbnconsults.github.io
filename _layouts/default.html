@@ -21,7 +21,7 @@
     <header>
       <div class="navbar" role="navigation">
         <div class="navheadr-brand">
-          <img src="images/sbnconsults_logo.png" class="img-responsive" alt="Logo image">
+          <img src="images/sbnconsults_logo.jpg" class="img-responsive" alt="Logo image">
         </div> 
 
         {% include nav.html %}
@@ -43,29 +43,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript">
- /* $(document).ready(function() {
-    $('.carousel').carousel({interval: 5000});
-  });
-*/
- var imgs = $('.carousel', this).find('img');
-    // loop over each img
-    imgs.each(function(){
-        var self = $(this);
-        var datasrc = self.attr('data-src');
-        if (datasrc) {
-            var d = $.Deferred();
-            self.one('load', d.resolve)
-                .attr("src", datasrc)
-                .attr('data-src', '');
-            deferreds.push(d.promise());
-        }
+    $(document).ready(function() {
+      $('.carousel').carousel().on('slid.bs.carousel', function() {
+        toggleCaption();
+      });
+      toggleCaption();
+
     });
-    
- $(window).load(function() { 
-  $("#spinner").fadeOut(); 
-   $('.carousel').carousel({interval: 5000}); 
- }); 
-</script>
-  </script -->
+
+    /* Function to make slow-caption class fade in slowly*/
+    function toggleCaption() {
+      var caption = $('.carousel').find('.active').find('.slow-caption');
+      caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
+    }
+  </script>
+
   </body>
 </html>
