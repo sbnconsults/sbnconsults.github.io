@@ -36,7 +36,7 @@
     Footer
   -->
   <footer>
-    <p class="pull-left">&copy; 2014 SBN Consults, LLC. <a href="#">Privacy</a></p>
+    <p class="pull-left">&copy; 2014 SBN Consults, LLC. </p>
     <p class="pull-right"><a href="#">Back to top</a></p>
   </footer>    
   <!-- Bootstrap core js -->
@@ -49,6 +49,61 @@
       });
       toggleCaption();
 
+      /* insert mailing link */
+      var user = "info";
+      var host = "sbnconsults.com";
+      var linktext = user + "@" + host ;
+      $('.mailing').html("<a href='" + "mail" + "to:" + user + "@" + host + "'>" + linktext + "</a>");
+
+      $('#contactForm').bootstrapValidator({
+        fields: {
+            name:{
+                validators: {
+                    notEmpty: {
+                        message: 'Please let us know your name'
+                    }
+                }
+            },
+            _replyto: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please provide your e-mail address'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not valid'
+                    }
+                }
+            },
+            body: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please write us a message'
+                    }
+                }
+            }
+        }
+      }).on('success.form.bv', function(e){
+        alert("sdfsdfsdf");
+           // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Use Ajax to submit form data
+            $.ajax({
+                type: "POST",
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                success: function(msg) {
+                  $('.message').show()
+                  // Show result somewhere ...
+                }
+            });
+
+
+      });
+
     });
 
     /* Function to make slow-caption class fade in slowly*/
@@ -56,6 +111,7 @@
       var caption = $('.carousel').find('.active').find('.slow-caption');
       caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
     }
+  
   </script>
 
   </body>
