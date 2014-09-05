@@ -284,7 +284,8 @@ footer {
 /* Make Responsive
  *------------------- */
 
-@media (max-width: 480px) {
+@media (max-width: 480px),(min-device-width : 320px) 
+and (max-device-width : 568px) {
 
   .carousel {
     vertical-align: middle;
@@ -334,6 +335,10 @@ footer {
    margin-right: auto;
    text-align:center;
  }
+
+}
+
+@media only screen and (min-width: 560px) and (max-device-width: 1136px) {
 
 }
 
