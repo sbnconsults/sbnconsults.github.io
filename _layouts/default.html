@@ -49,12 +49,13 @@
       });
       toggleCaption();
 
-      /* insert mailing link */
+      /* insert mailing link to avoid spambots */
       var user = "info";
       var host = "sbnconsults.com";
       var linktext = user + "@" + host ;
       $('.mailing').html("<a href='" + "mail" + "to:" + user + "@" + host + "'>" + linktext + "</a>");
 
+      /* validation of contact form */
       $('#contactForm').bootstrapValidator({
         fields: {
             name:{

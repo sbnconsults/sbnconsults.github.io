@@ -5,6 +5,8 @@
  */
 
 
+/* General
+ * --------- */
 body {
   text-align: center;
   font-family: Sans-Serif;
@@ -33,6 +35,14 @@ a:hover {
   color: #ffffff;
 }
 
+.no-rounded {
+  .border-radius(0px);
+}
+
+.white-bordered {
+  border: solid 1px #ffffff;
+}
+
 /* Header
  * --------- */
 
@@ -47,7 +57,6 @@ a:hover {
 .navheadr-brand {
   height: 100px;
   float: left;
-
 }
 
 .navheadr-nav {
@@ -76,8 +85,8 @@ a:hover {
 
 .navheadr-nav > li > a:hover,
 .navheadr-nav > li > a:focus {
-   color: #000;
-   background-color: transparent;
+  color: #000;
+  background-color: transparent;
 }
 
 .navheadr-nav > .active > a,
@@ -86,6 +95,8 @@ a:hover {
   color: #000;
 }
 
+/* Body
+ * --------- */
 .icon-circle {  
   .border-radius(50%);  
   width: 140px;
@@ -102,13 +113,6 @@ a:hover {
   font-weight: bold;
 }
 
-.no-rounded {
-  .border-radius(0px);
-}
-
-.white-bordered {
-  border: solid 1px #ffffff;
-}
 .box-wrapper {
   .border-radius(25px);
   background-color: #000000;
@@ -198,30 +202,30 @@ a:hover {
 }
 
 .carousel .item {
-    -webkit-transition: opacity 3s ease-in-out;
-    -moz-transition: opacity 3s ease-in-out;
-    -ms-transition: opacity 3s ease-in-out;
-    -o-transition: opacity 3s ease-in-out;
-    transition: opacity 3s ease-in-out;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .carousel .active.left, .carousel .active.right {
-    left:0;
-    opacity:0;
-    z-index:10;
+  left:0;
+  opacity:0;
+  z-index:10;
 }
 .carousel .next, .carousel .prev {
-    left:0;
-    opacity:1;
-    z-index:1;
+  left:0;
+  opacity:1;
+  z-index:1;
 }
 
-/* MARKETING CONTENT
+/* Marketing
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
 .marketing {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .marketing .col-md-4 {
@@ -244,7 +248,6 @@ a:hover {
   width: 100px;
   height: 100px;
 }
-
 
 /* Featurettes
 ------------------------- */
@@ -285,7 +288,7 @@ footer {
 
   .carousel {
     vertical-align: middle;
-     margin-top: 30px;
+    margin-top: 30px;
   }
 
   .carousel-caption {
