@@ -1,3 +1,0 @@
-markdown: redcarpet
-production_url : https://sbnconsults.github.io
-exclude: ['README.md']

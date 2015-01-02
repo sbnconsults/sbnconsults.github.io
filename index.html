@@ -1,8 +1,44 @@
----
-layout: default
----
-<div class="container">
-  <div class="row"> 
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A team of software consultants passionate about solving business problems and based in Washington, DC">
+    <meta name="author" content="SBN Consults">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="icon" href="../../favicon.ico">
+    <!-- Bootstrap core + custom CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>SBN Consults, LLC</title>
+
+
+  </head>
+  <body>
+  <!-- 
+    Navigation
+  -->
+    <header id="home"> 
+      <div id="menu-wrap" class="navbar menu-back cbp-af-header" role="navigation">
+        <div class="navheadr-brand" >
+          <img src="images/sbnconsults_logo.gif" class="img-responsive" alt="Logo image"  >
+
+        <ul class="navheadr-nav slimmenu">
+          <li><a href="/index.html" class="mPS2id-clicked" >Home</a></li>
+          <li><a href="#about" >About</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+      </div>
+    </header> <!-- end of .navbar -->	
+
+	
+
+  <div class="carousel-container">
+  <div class="row" > 
     <div id="myCarousel" class="carousel slide" data-pause="false">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -35,56 +71,314 @@ layout: default
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div><!-- end of .carousel -->
-  </div>
+  </div>							
+				
 
     <!--
       Marketing quick intro 
     -->
   <div class="row"> 
     <!-- Three columns of text below the carousel -->
-    <div class="container marketing">
+    <div class="marketing">
+
       <div class="col-md-4">
         <img class="icon-circle" src="images/icon1.jpg" alt="about icon image">
-        <h2>We are ...</h2>
+        <h3>We are ...</h3>
         <p> passionate about using technology to solve business problems and our base is Washington, DC </p>
-        <p><a class="btn btn-default btn-more" href="about.html" role="button">More About Us &raquo;</a></p>
+        <p><a class="btn btn-default btn-more" href="about.html" role="button" >More About Us &raquo;</a></p>
       </div>
+
       <div class="col-md-4">
         <img class="icon-circle" src="images/icon2.jpg" alt="projects icon image" >
-        <h2>Our projects</h2>
+        <h3>Our projects</h3>
         <p>From building business sites to mobile applications, we offer solutions to meet the growing demands of our age of technology.
             Learn more about our past projects and areas of expertise.</p>
         <p><a class="btn btn-default btn-more" href="projects.html" role="button">Read more &raquo;</a></p>
       </div>
+
       <div class="col-md-4">
         <img class="icon-circle" src="images/icon3.jpg" alt="contact icon image" >
-        <h2>Talk to us!</h2>
+        <h3>Talk to us!</h3>
         <p>We taylor our products and services to meet your business needs. Get in touch with us now at <span class="mailing"></span>
         <br> or fill out our contact form </p>
         <p><a class="btn btn-default" href="contact.html" role="button">Contact Us &raquo;</a></p>
       </div>
+
     </div><!-- .end of container marketing-->
   </div><!-- .end of row -->
 </div><!-- .end of container -->
 
-<!-- 
-  Featurettes 
--->
 
-<div class="container featurette-color break-early">
-  <div class="row featurette">
-    <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="images/quickbox1.jpg">
-    </div>
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Our <span class="text-muted">Services ...</span></h2>
-      <p class="lead"> Website Development<br>
-        Content Management Systems <br>
-        Search Engine Implementation <br>
-        UI/UX design <br>
-        Mobile Solutions <br>
-        Database design & implementation...</p>
-    </div>
-  </div><!-- /END THE FEATURETTES -->
-</div><!-- end of .container -->
+	<!-- PARALLAX SECTION
+    ================================================== -->	
 
+	<section class="parallax-section" id="clients">	
+		<div class="parallax-1"></div>
+		<div class="container z-index-pages">
+			<div class="sixteen columns">
+				<div class="quick-link-wrap">
+					<div>
+						<h4>Bring us your ideas...</h4>
+						
+						<p><span class="sub-text">and we will take them from design to completion</span></p>
+					</a>
+					</div>
+				</div>
+				<div class="testimonials-carousel-wrap">
+					<div id="sync1" class="owl-carousel">
+						<div class="item" >	
+							<p>Web & Database Development ... </p>
+						</div>
+						<div class="item">
+							<p >Mobile Solutions ... </p>
+						</div>						
+						<div class="item">
+							<p >CMS, UI/UX, Search Engine Implementations ... </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	
+	<!-- ABOUT US SECTION
+    ================================================== -->	
+	
+	
+	<section class="about" id="about">
+		<div class="container">
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<h1>About US</h1>
+			</div>
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<div class="sub-text" >We are an IT consulting firm based in Washington, DC</div>
+			</div>
+	
+				<div class="one columns" ></div>
+				<div class="eight columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+					  <p>. . . our team of consultants are passionate about solving business problems through expertly crafted technology solutions.  They bring their broad range of skills in software development including e-commerce, mobile app development, search engine implementation, database development and R&D.<br><br><br></p>
+
+					 <span ><h6>Our services include:</h6><br>
+  web development & maintenance<br>
+            content management systems<br>
+            mobile solutions<br>
+            UI/UX design<br>
+            search engine implementation<br>
+            database design and development<br><br>
+          </span>
+				</div>
+				<div class="one columns"></div>
+				<div class="five columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+					<div>
+						<img class="icon-circle img-responsive" src="images/icon1b.jpg" alt="projects icon image" />
+					</div>
+				</div>
+
+			</div>	
+		
+	</section>
+
+		
+	<!-- PROJECT SECTION
+    ================================================== -->
+
+	<section class="work" id="work">
+				<div class="container" >
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<h1>Projects</h1>
+			</div>
+
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<div class="sub-text">featured projects <a href="#contact" data-gal="m_PageScroll2id" data-ps2id-offset="110">you can tell us what you think</a></div>
+			</div>
+	
+			<div class="two columns"></div>
+			<div class="six columns">
+				<h5> -> Cryptogaze </h5>
+				<p>. . . is an android app for tracking bit currency trading. It provides real time quotes with ROC and a built in currency converter. <span class="sub-text"><br>Browse the code <a href="https://github.com/sbnconsults/cryptogaze" target="_blank">on github</a></span></p>
+
+				<br><br>
+				<h5> -> gtownbites.com </h5>
+				<p>. . . is a responsive site built for a restaurant in Georgetown (bootstrap/jQuery). <span class="sub-text"><br>Order a bite <a href="https://www.gtown.bites" target="_blank">here</a></span></p>
+
+
+			</div>
+			<div class="one columns"></div>
+			<div class="seven columns">
+				<div id="owl-project" class="owl-carousel owl-theme">
+					  <div class="item"><img src="images/cryptogaze.gif" alt=""class="img-responsive center-block" ></div>
+					  <div class="item"><img src="images/gtownbites.jpg" alt="" class="img-responsive center-block"></div>
+				 
+				</div>
+			</div>
+		</div>
+	
+	</section>		
+	
+	
+	<!-- CONTACT SECTION
+    ================================================== -->
+
+	<section class="contact" id="contact">	
+		<div class="container">
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<h1>contact us</h1>
+			</div>
+			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+				<div class="sub-text">We love to hear from you</div>
+			</div>
+	
+				<form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+				<div class="two columns"></div>
+				<div class="twelve columns">
+					<div  data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<label for="name"> 
+							<span class="error" id="err-name">please enter name</span>
+						</label>
+						<input name="name" id="name" type="text"   placeholder="Your Name: *"/>
+					</div>
+					<div  data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<label for="email"> 
+							<span class="error" id="err-email">please enter e-mail</span>
+							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
+						</label>
+						<input name="email" id="email" type="text"  placeholder="E-Mail: *"/>
+					</div>
+					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<label for="message"></label>
+						<textarea name="message" id="message" placeholder="Your message:"></textarea>
+					</div>
+					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<div id="button-con"><button class="send_message" id="send"><span data-hover="submit">send</span></button></div>					
+					</div>
+					<div class="clear"></div>	
+					<div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+					<div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+					<div class="error" id="err-state"></div>
+				</div>
+				<div class="two columns"></div>	
+				</form>	
+				</div>
+				<div class="clear"></div>
+				<div id="ajaxsuccess">Successfully sent!!</div>	
+			</div>
+		
+		<div class="clear"></div>
+		
+		<div class="footer">
+			<div class="arrow-top" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s"><a href="#home" data-gal="m_PageScroll2id" data-ps2id-offset="65">&#xf106;</a></div>
+			<div class="container">
+				<div class="one-third column"></div>
+				<div class="one-third column">
+					<div class="call">
+					SBN Consults<br>
+					Washington, DC
+					</div>
+				</div>
+				<div class="one-third column"></div>
+			</div>
+			<div class="footer-down">
+				<div class="container">
+					<div class="sixteen columns">
+						©2014 ALL RIGHT RESERVED.
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+	
+		
+		
+
+		
+	<!-- JAVASCRIPT
+    ================================================== 
+
+<script type="text/javascript" src="ckj/js/jquery.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.carousel').carousel().on('slid.bs.carousel', function() {
+        toggleCaption();
+      });
+      toggleCaption();
+
+    /* Function to make slow-caption class fade in slowly*/
+    function toggleCaption() {
+      var caption = $('.carousel').find('.active').find('.slow-caption');
+      caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
+
+
+    }
+
+  });
+  </script>
+<script type="text/javascript" src="ckj/js/scroll.js"></script>
+<script type="text/javascript" src="ckj/js/navigation.js"></script>	
+<script type="text/javascript" src="ckj/js/classie.js"></script>
+<script type="text/javascript" src="ckj/js/cbpAnimatedHeader.min.js"></script>
+<script type="text/javascript" src="ckj/js/jquery.malihu.PageScroll2id.js"></script>
+<script type="text/javascript">
+(function($) { "use strict";
+			$(window).load(function(){
+				
+				/* Page Scroll to id fn call */
+				$("ul.slimmenu li a,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"ul.slimmenu li a",
+					offset: 110,
+					scrollSpeed:1000,
+					scrollEasing: "easeInOutCubic"
+				});
+				
+				/* demo functions
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});*/
+				
+			});	
+})(jQuery);
+
+</script>
+
+<script type="text/javascript" src="ckj/js/jquery.counterup.min.js"></script>
+<script type="text/javascript" src="ckj/js/waypoints.min.js"></script>
+<script type="text/javascript" src="ckj/js/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="ckj/js/owl.carousel.min.js"></script>
+<script type="text/javascript">
+(function($) { "use strict";
+$(document).ready(function() {
+ 
+  $("#owl-project").owlCarousel({
+ 
+      navigation : false,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+	  autoPlay:5000
+ 
+  });
+ 
+});
+})(jQuery);
+</script>
+<script type="text/javascript" src="ckj/js/jquery.stapel.js"></script> 
+<script type="text/javascript" src="ckj/js/contact.js"></script>
+<script type="text/javascript" src="ckj/js/scrollReveal.js"></script>
+<script type="text/javascript">
+(function($) { "use strict";
+      window.scrollReveal = new scrollReveal();
+})(jQuery);
+</script>
+<script type="text/javascript" src="ckj/js/template.js"></script>  	  
+<!-- End Document
+================================================== -->
+</body>
+</html>
