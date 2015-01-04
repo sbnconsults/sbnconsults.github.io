@@ -85,7 +85,7 @@
         <img class="icon-circle" src="images/icon1.jpg" alt="about icon image">
         <h3>We are ...</h3>
         <p> passionate about using technology to solve business problems and our base is Washington, DC </p>
-        <p><a class="btn btn-default btn-more" href="about.html" role="button" >More About Us &raquo;</a></p>
+        <p><a class="btn btn-default btn-more" href="#about" data-gal="m_PageScroll2id" data-ps2id-offset="110" role="button" >More About Us &raquo;</a></p>
       </div>
 
       <div class="col-md-4">
@@ -93,7 +93,7 @@
         <h3>Our projects</h3>
         <p>From building business sites to mobile applications, we offer solutions to meet the growing demands of our age of technology.
             Learn more about our past projects and areas of expertise.</p>
-        <p><a class="btn btn-default btn-more" href="projects.html" role="button">Read more &raquo;</a></p>
+        <p><a class="btn btn-default btn-more" href="#work" data-gal="m_PageScroll2id" data-ps2id-offset="110" role="button">Read more &raquo;</a></p>
       </div>
 
       <div class="col-md-4">
@@ -101,7 +101,7 @@
         <h3>Talk to us!</h3>
         <p>We taylor our products and services to meet your business needs. Get in touch with us now at <span class="mailing"></span>
         <br> or fill out our contact form </p>
-        <p><a class="btn btn-default" href="contact.html" role="button">Contact Us &raquo;</a></p>
+        <p><a class="btn btn-default" href="#contact" data-gal="m_PageScroll2id" data-ps2id-offset="110"  role="button">Contact Us &raquo;</a></p>
       </div>
 
     </div><!-- .end of container marketing-->
@@ -204,7 +204,7 @@
 
 				<br><br>
 				<h5> -> gtownbites.com </h5>
-				<p>. . . is a responsive site built for a restaurant in Georgetown (bootstrap/jQuery). <span class="sub-text"><br>Order a bite <a href="https://www.gtown.bites" target="_blank">here</a></span></p>
+				<p>. . . is a responsive site built for a restaurant in Georgetown (bootstrap/jQuery). <span class="sub-text"><br>Order a bite <a href="https://www.gtownbites.com" target="_blank">here</a></span></p>
 
 
 			</div>
@@ -232,26 +232,32 @@
 			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 				<div class="sub-text">We love to hear from you</div>
 			</div>
+			<div class="container">	
+				<div class="clear"></div>
 	
-				<form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+				<form name="ajax-form" id="ajax-form" action="http://forms.brace.io/info@sbnconsults.com" method="post">
 				<div class="two columns"></div>
 				<div class="twelve columns">
 					<div  data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 						<label for="name"> 
-							<span class="error" id="err-name">please enter name</span>
+							<span class="error" id="err-name">Please enter name.</span>
 						</label>
 						<input name="name" id="name" type="text"   placeholder="Your Name: *"/>
 					</div>
 					<div  data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 						<label for="email"> 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
+							<span class="error" id="err-email">Please enter e-mail.</span>
+							<span class="error" id="err-emailvld">E-mail is not a valid format.</span>
 						</label>
 						<input name="email" id="email" type="text"  placeholder="E-Mail: *"/>
 					</div>
 					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<label for="subject"></label>
+						<input name="subject" id="subject" type="text" placeholder="Subject:" />
+					</div>
+					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 						<label for="message"></label>
-						<textarea name="message" id="message" placeholder="Your message:"></textarea>
+						<textarea name="message" id="message" placeholder="Message:"></textarea>
 					</div>
 					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 						<div id="button-con"><button class="send_message" id="send"><span data-hover="submit">send</span></button></div>					
@@ -297,9 +303,8 @@
 
 		
 	<!-- JAVASCRIPT
-    ================================================== 
+    ================================================== -->
 
-<script type="text/javascript" src="ckj/js/jquery.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript">
@@ -313,17 +318,16 @@
     function toggleCaption() {
       var caption = $('.carousel').find('.active').find('.slow-caption');
       caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
-
-
     }
 
   });
   </script>
+<!--  
 <script type="text/javascript" src="ckj/js/scroll.js"></script>
 <script type="text/javascript" src="ckj/js/navigation.js"></script>	
-<script type="text/javascript" src="ckj/js/classie.js"></script>
+<script type="text/javascript" src="ckj/js/classie.js"></script> 
 <script type="text/javascript" src="ckj/js/cbpAnimatedHeader.min.js"></script>
-<script type="text/javascript" src="ckj/js/jquery.malihu.PageScroll2id.js"></script>
+<script type="text/javascript" src="ckj/js/jquery.malihu.PageScroll2id.js"></script> -->
 <script type="text/javascript">
 (function($) { "use strict";
 			$(window).load(function(){
@@ -336,21 +340,13 @@
 					scrollEasing: "easeInOutCubic"
 				});
 				
-				/* demo functions
-				$("a[rel='next']").click(function(e){
-					e.preventDefault();
-					var to=$(this).parent().parent("section").next().attr("id");
-					$.mPageScroll2id("scrollTo",to);
-				});*/
-				
 			});	
 })(jQuery);
 
 </script>
 
-<script type="text/javascript" src="ckj/js/jquery.counterup.min.js"></script>
-<script type="text/javascript" src="ckj/js/waypoints.min.js"></script>
-<script type="text/javascript" src="ckj/js/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="ckj/js/jquery.counterup.min.js"></script> 
+<!--<script type="text/javascript" src="ckj/js/jquery.parallax-1.1.3.js"></script> -->
 <script type="text/javascript" src="ckj/js/owl.carousel.min.js"></script>
 <script type="text/javascript">
 (function($) { "use strict";
@@ -368,16 +364,17 @@ $(document).ready(function() {
  
 });
 })(jQuery);
+
 </script>
-<script type="text/javascript" src="ckj/js/jquery.stapel.js"></script> 
-<script type="text/javascript" src="ckj/js/contact.js"></script>
-<script type="text/javascript" src="ckj/js/scrollReveal.js"></script>
 <script type="text/javascript">
 (function($) { "use strict";
-      window.scrollReveal = new scrollReveal();
+window.scrollReveal = new scrollReveal();
+
 })(jQuery);
+
+
 </script>
-<script type="text/javascript" src="ckj/js/template.js"></script>  	  
+<!--<script type="text/javascript" src="ckj/js/template.js"></script>  
 <!-- End Document
 ================================================== -->
 </body>
