@@ -16,8 +16,9 @@
 // @prepros-prepend "classie.js"
 // @prepros-prepend "cbpAnimatedHeader.min.js"
 // @prepros-prepend "jquery.malihu.PageScroll2id.js"
+// @prepros-prepend "jquery.counterup.min.js"
 // @prepros-prepend "jquery.parallax-1.1.3.js"
+// @prepros-prepend "owl.carousel.min.js"
+// @prepros-prepend "jquery.stapel.js"
 // @prepros-prepend "contact.js"
 // @prepros-prepend "scrollReveal.js"
-// @prepros-prepend "template.js"
-

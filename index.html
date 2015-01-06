@@ -302,79 +302,58 @@
 		
 
 		
-	<!-- JAVASCRIPT
-    ================================================== -->
+<!-- JAVASCRIPT
+================================================== -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('.carousel').carousel().on('slid.bs.carousel', function() {
-        toggleCaption();
-      });
-      toggleCaption();
-
-    /* Function to make slow-caption class fade in slowly*/
-    function toggleCaption() {
-      var caption = $('.carousel').find('.active').find('.slow-caption');
-      caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
-    }
-
-  });
-  </script>
-<!--  
-<script type="text/javascript" src="ckj/js/scroll.js"></script>
-<script type="text/javascript" src="ckj/js/navigation.js"></script>	
-<script type="text/javascript" src="ckj/js/classie.js"></script> 
-<script type="text/javascript" src="ckj/js/cbpAnimatedHeader.min.js"></script>
-<script type="text/javascript" src="ckj/js/jquery.malihu.PageScroll2id.js"></script> -->
 <script type="text/javascript">
-(function($) { "use strict";
-			$(window).load(function(){
+
+	$(document).ready(function() {
+    	$('.carousel').carousel().on('slid.bs.carousel', function() {
+    		toggleCaption();
+    	});
+    	toggleCaption();
+
+    	/* Function to make slow-caption class fade in slowly*/
+    	function toggleCaption() {
+      		var caption = $('.carousel').find('.active').find('.slow-caption');
+      		caption.delay(500).fadeIn(2000).delay(4000).fadeOut(1000);
+    	}
+	});
+
+	(function($) { "use strict";
+		$(window).load(function(){
 				
-				/* Page Scroll to id fn call */
-				$("ul.slimmenu li a,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
-					highlightSelector:"ul.slimmenu li a",
-					offset: 110,
-					scrollSpeed:1000,
-					scrollEasing: "easeInOutCubic"
-				});
+			/* Page Scroll to id fn call */
+			$("ul.slimmenu li a,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
+				highlightSelector:"ul.slimmenu li a",
+				offset: 110,
+				scrollSpeed:1000,
+				scrollEasing: "easeInOutCubic"
+			});
 				
-			});	
-})(jQuery);
+		});	
 
-</script>
+		$(document).ready(function() {
+ 
+  			$("#owl-project").owlCarousel({
+ 
+      			navigation : false,
+      			slideSpeed : 300,
+      			paginationSpeed : 400,
+      			singleItem:true,
+	  			autoPlay:5000
+ 
+  			});
+ 		});
 
-<script type="text/javascript" src="ckj/js/jquery.counterup.min.js"></script> 
-<!--<script type="text/javascript" src="ckj/js/jquery.parallax-1.1.3.js"></script> -->
-<script type="text/javascript" src="ckj/js/owl.carousel.min.js"></script>
-<script type="text/javascript">
-(function($) { "use strict";
-$(document).ready(function() {
- 
-  $("#owl-project").owlCarousel({
- 
-      navigation : false,
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem:true,
-	  autoPlay:5000
- 
-  });
- 
-});
-})(jQuery);
-
-</script>
-<script type="text/javascript">
-(function($) { "use strict";
-window.scrollReveal = new scrollReveal();
-
-})(jQuery);
+		window.scrollReveal = new scrollReveal();
+	})(jQuery);
 
 
 </script>
-<!--<script type="text/javascript" src="ckj/js/template.js"></script>  
+<script type="text/javascript" src="ckj/js/template.js"></script>
 <!-- End Document
 ================================================== -->
 </body>
