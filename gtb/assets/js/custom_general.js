@@ -3,19 +3,18 @@
 // ******************************************************************************************
 
 //*********************Google MAP *********************/
-		var color = "#9E2811" // google map background colour
-		var saturation = 100 // 
-		var mapLatitude=38.9076858 
-		var mapLongitude=-77.063863//(Fist Value Latitude, Second Value ), get YOUR coordenates here!: http://itouchmap.com/latlong.html
-		var mapZoom_value=16 // Map zoom level parameter only numeric  
+var color = "#9E2811" // google map background colour
+var saturation = 100 // 
+var mapLatitude=38.9076858 
+var mapLongitude=-77.063863//(Fist Value Latitude, Second Value ), get YOUR coordenates here!: http://itouchmap.com/latlong.html
+var mapZoom_value=16 // Map zoom level parameter only numeric  
 
 
 // Google map marker example 2 locations 
 		//map-marker
-		var marker1_Latitude=38.9076858 
-		var marker1_Longitude=-77.063863
-		var marker1_content="<h2>GTown Bites</h2> Washington, DC" // marker or  on click content (Info Window) 
-		var marker1_pointerUrl = 'assets/img/map-marker.png' // set your color pointer here!
+var marker1_Latitude=38.9076858 
+var marker1_Longitude=-77.063863
+var marker1_pointerUrl = 'assets/img/map-marker.png' // set your color pointer here!
 
 
 
@@ -24,19 +23,19 @@
 
 //*****************  Scroll speed and page animation  *********************/
 
-		// Scrollto.js parameter
-		var horizontal_scroll_speed=1500 // speed Horizontal Scrollto parameter.
+// Scrollto.js parameter
+var horizontal_scroll_speed=1500 // speed Horizontal Scrollto parameter.
 		
-		//animation sliding speed configure 
-		var menu_header_speed=300 // on sub page topbar sliding down animation default #350
-		var menu_main_header_speed=600   // home page middle bar sliding down animation default #800
+//animation sliding speed configure 
+var menu_header_speed=300 // on sub page topbar sliding down animation default #350
+var menu_main_header_speed=600   // home page middle bar sliding down animation default #800
 
 //*********************Scroll speed and page animation *********************/
 
 
 //content scrollbar (niceScroll) colour 
-		var niceScrollcursorcolor = "#f32a2a"// Set your content niceScroll color here!
-		var niceScrollcursorborder = "0"// Set your content niceScroll border color here!
+var niceScrollcursorcolor = "#f32a2a"// Set your content niceScroll color here!
+var niceScrollcursorborder = "0"// Set your content niceScroll border color here!
 	
 //Configuration END
 
@@ -45,96 +44,93 @@
 		  	Navigation on click/ on load / on hasch chage scroll to 
 ******************************************************************************/
 
+
 jQuery(document).ready(function($){
-"use strict";
+	"use strict";
 
-$("#header").click(function (e) { e.preventDefault(); });
-$("#mainheader").click(function (e) { e.preventDefault(); });
-$("#specialmenu").click(function (e) { e.preventDefault(); });
+	$("a.nav-link").click(function (e) { e.preventDefault();});
 
-//on page load show from hash index.html#about
-/*********************************************************************************/
-var url = window.location.href;
-var type = url.split('#');
-var hash = '';
-if(type.length > 1) 
-{ 
-hash = type[1];
-}
-
-if (hash!=""){
-var hash_fullname= "#" + hash;
-$( "a[href='"+hash_fullname+"']" ).addClass('selected');
-	if(hash_fullname=="#home"){ 
-	// hiding subpage header 
-	$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
-	Animation("#header","fadeOutUp","200");
+	//on page load show from hash index.html#about
+	/*********************************************************************************/
+	var url = window.location.href;
+	var type = url.split('#');
+	var hash = '';
+	if(type.length > 1) 
+	{ 
+		hash = type[1];
 	}
-	else {
-	// hiding Home page header 
-	$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
-	Animation("#mainheader","fadinUp","200");
-	}
+	if (hash!=""){
+		var hash_fullname= "#" + hash;
+		$( "a[href='"+hash_fullname+"']" ).addClass('selected');
+		if(hash_fullname=="#home"){ 
+			// hiding subpage header 
+			$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
+			Animation("#header","fadeOutUp","200");
+		}
+		else {
+			// hiding Home page header 
+			$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
+			Animation("#mainheader","fadinUp","200");
+		}
 
 		$('#wrapper').scrollTo(hash_fullname, 2000, {easing:'easeInOutExpo', axis:'x', onAfter:function(){ // scrollto callback  function 
-			if(hash_fullname=="#home")
+			/*if(hash_fullname=="#home")
 			{ // for home page animation
-		//	Homepage_Animation();
-			}
-			else 
-			{ // sub page animation
-				if ( $('#header').is(':hidden')){ // if header is hidden then do animation
-					Subpage_animation();
-				}
-			} 
+			Homepage_Animation();
+			}*/
+				if(hash_fullname!="#home")
+				{ // sub page animation
+					if ( $('#header').is(':hidden')){ // if header is hidden then do animation
+						Subpage_animation();
+					}
+				} 
 		
-				} // scrollto callback function close
+			} // scrollto callback function close
 		
 		});//	scrollto close
 
-}// hash!="" close
+	}// hash!="" close
 
 
-// on click navigation 
-/*********************************************************************************/
-$('.main-nav a.nav-link,.brand a.nav-link,a.nav-link').click(function () {
-	
-var name = $(this).attr('href');
-if(name!="#")  { // if navigation not equalt to "#"
+	// on click navigation 
+	/*********************************************************************************/
+	$('a.nav-link').click(function () {
+		var name = $(this).attr('href');
+		if(name!="#")  { // if navigation not equalt to "#"
+			if(name=="#home"){
+				$('.selected').removeClass('selected');
+				$( "a[href='"+name+"']" ).addClass('selected');
 
-if(name=="#home"){
-$('.selected').removeClass('selected');
-$( "a[href='"+name+"']" ).addClass('selected');
+				$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
+				Animation("#header","fadeOutUp","200");
+			}
+			else {
+				if(name!=""){
+					$('.selected').removeClass('selected');
+					$( "a[href='"+name+"']" ).addClass('selected');
+					$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
+					Animation("#mainheader","fadinUp","200");
+				}
+			}
 
-$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
-Animation("#header","fadeOutUp","200");
-}
-else {
-if(name!=""){
-$('.selected').removeClass('selected');
-$( "a[href='"+name+"']" ).addClass('selected');
-$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
-Animation("#mainheader","fadinUp","200");
-}}
+			//	scrollto start
+			$('#wrapper').scrollTo($(this).attr('href'), horizontal_scroll_speed, {easing:'easeInOutExpo', axis:'x', onAfter:function(){ // scrollto callback  function 
+					if(name=="#home"){ // for home page animation 
+						Homepage_Animation();
+						$( "a[href='#home']" ).addClass('selected');
+					}
+					else { // sub page animation
+						if ( $('#header').is(':hidden')){
+							Subpage_animation();
+						}
+					} // else close
 
-//	scrollto start
-$('#wrapper').scrollTo($(this).attr('href'), horizontal_scroll_speed, {easing:'easeInOutExpo', axis:'x', onAfter:function(){ // scrollto callback  function 
-if(name=="#home"){ // for home page animation 
-Homepage_Animation();
-$( "a[href='#home']" ).addClass('selected');
-}
-else { // sub page animation
-if ( $('#header').is(':hidden')){
-Subpage_animation();
-}
-} // else close
+				} // scrollto callback function close
 
-} // scrollto callback function close
+			} );//	scrollto close
 
-} );//	scrollto close
-
-} // if navigation not equalt to "#" end
-}); // navigation click end
+		} // if navigation not equalt to "#" end
+	}); // navigation click end
 
 
 }); // end document.ready
@@ -145,46 +141,46 @@ Subpage_animation();
 
 $(window).bind("hashchange", function(e) {
 									  
-//on hash change getting the ID
-var url = window.location.href;
-var type = url.split('#');
-var hash = '';
-if(type.length > 1) 
-{ 
-hash = type[1];
-}
-
-if (hash!=""){
-var hash_fullname= "#" + hash;
-
-	if(hash_fullname=="#home"){ 
-	// hiding subpage header 
-	$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
-	Animation("#header","fadeOutUp","200");
+	//on hash change getting the ID
+	var url = window.location.href;
+	var type = url.split('#');
+	var hash = '';
+	if(type.length > 1) 
+	{ 
+		hash = type[1];
 	}
-	else {
-	// hiding Home page header 
-	$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
-	Animation("#mainheader","fadinUp","200");
-	}
+
+	if (hash!=""){
+		var hash_fullname= "#" + hash;
+
+		if(hash_fullname=="#home"){ 
+			// hiding subpage header 
+			$('#header').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 1000);
+			Animation("#header","fadeOutUp","200");
+		}
+		else {
+			// hiding Home page header 
+			$('#mainheader').hide('fade', { direction: 'left', easing: 'easeInQuad' }, 600);
+			Animation("#mainheader","fadinUp","200");
+		}
 
 		$('#wrapper').scrollTo(hash_fullname, 2000, {easing:'easeInOutExpo', axis:'x', onAfter:function(){ // scrollto callback  function 
-			if(hash_fullname=="#home")
-			{ // for home page animation 
-			Homepage_Animation();
-			}
-			else 
-			{ // sub page animation
-				if ( $('#header').is(':hidden')){ // if header is hidden then do animation
-					Subpage_animation();
+				if(hash_fullname=="#home")
+				{ // for home page animation 
+					Homepage_Animation();
 				}
-			} 
+				else 
+				{ // sub page animation
+					if ( $('#header').is(':hidden')){ // if header is hidden then do animation
+						Subpage_animation();
+					}
+				} 
 		
-				} // scrollto callback function close
+			} // scrollto callback function close
 		
 		});//	scrollto close
 
-}// hash!="" close
+	}// hash!="" close
 
 });
 
@@ -194,39 +190,34 @@ var hash_fullname= "#" + hash;
 ***************************************************/
 
 jQuery(document).ready(function($){
-"use strict";
+	"use strict";
+	
+	// on hash change 
+	window.onhashchange = function() {
+		$('.selected').removeClass('selected');
+		var hash = window.location.hash;
 
-// on hash change 
-window.onhashchange = function() {
-$('.selected').removeClass('selected');
-var hash = window.location.hash;
+		if (hash!=""){
+			$( "a[href='"+hash+"']" ).addClass('selected');
+		}
+	}
 
-if (hash!=""){
-$( "a[href='"+hash+"']" ).addClass('selected');
-}}
-// on click navigation add class selected
-$("#header ul.nav li a").click(function () {
-	$('ul.nav li a').removeAttr('class');
-	$(this).attr('class', 'nav-link selected');
+	// on click navigation add class selected
+	$("#header ul.nav li a").click(function () {
+		$('ul.nav li a').removeAttr('class');
+		$(this).attr('class', 'nav-link selected');
 	});
 
-// on external and internal page link 
-$('.link').click(function () {
-var name = $(this).attr('href');
-window.location.href = name;
-}); 
 
 
-$(function(){
-	$('#sub-nav').slicknav({
-	label: '',
-	duration: 1000,
-	easingOpen: "easeOutQuint", //available with jQuery UI
-	closeOnClick:true
-});
-});
-
-
+	$(function(){
+		$('#sub-nav').slicknav({
+			label: '',
+			duration: 1000,
+			easingOpen: "easeOutQuint", //available with jQuery UI
+			closeOnClick:true
+		});
+	});
 
 });
 
@@ -255,25 +246,23 @@ function Animation(element,effect,timedelay)
 
 function Homepage_Animation()
 {
-$('#mainheader').show('fade', { easing: 'easeInQuad' }, menu_main_header_speed); //on homepage topbar sliding up animation 
-Animation("#mainheader","fadeInUp","200");
-Animation("#spmenu1","fadeInRight","300");
-Animation("#spmenu2","fadeInRight","800");
-Animation("#spmenu3","fadeInRight","5000");
-Animation("#1","fadeInLeft","800");
-Animation("#2","fadeInUp","1800");
-Animation("#3","fadeInDown","800");
-Animation("#4","fadeInLeft","1800");
-Animation("#5","fadeInRight","800");
+	$('#mainheader').show('fade', { easing: 'easeInQuad' }, menu_main_header_speed); //on homepage topbar sliding up animation 
+	Animation("#mainheader","fadeInUp","200");
+	Animation("#spmenu1","fadeInRight","300");
+	Animation("#spmenu2","fadeInRight","800");
+	Animation("#spmenu3","fadeInRight","5000");
+	Animation("#1","fadeInLeft","800");
+	Animation("#2","fadeInUp","1800");
+	Animation("#3","fadeInDown","800");
+	Animation("#4","fadeInLeft","1800");
+	Animation("#5","fadeInRight","800");
 }
 
 function Subpage_animation ()
 {
-Animation("#header","fadeInDown","200");
-$('#header').show('fade', { direction: 'top', easing: 'easeInQuad' }, menu_header_speed); //on sub page topbar sliding down animation 
+	Animation("#header","fadeInDown","200");
+	$('#header').show('fade', { direction: 'top', easing: 'easeInQuad' }, menu_header_speed); //on sub page topbar sliding down animation 
 }
-
-
 
 /***************************************************
 		  		Home page Social icon animation
@@ -287,7 +276,7 @@ jQuery(function($){
 			$el.append($el.find('i').clone());
 		});
 
-$('.accura-social-icons-big a i').wrap('<span></span>');
+	$('.accura-social-icons-big a i').wrap('<span></span>');
 	//end region
 });
 
@@ -296,8 +285,8 @@ $('.accura-social-icons-big a i').wrap('<span></span>');
 		  		General functions // resizing BG
 ***************************************************/
 jQuery(document).ready(function($){
-"use strict";
-$(window).resize(function () {
+	"use strict";
+	$(window).resize(function () {
 		resizePanel();
 	});
  });
@@ -343,258 +332,167 @@ $(window).load(function() {
 		resizeBg();
 	}).trigger("resize");
 
-
-
 });
 
-
-
-// ******************************************************************************************
-// Reservation Form Start
-// ******************************************************************************************
-jQuery(document).ready(function($){
-"use strict";	
-  $('#reservation_form').validate(
-    {
-    rules: {
-    name: {
-    minlength: 2,
-    required: true
-    },
-	phone: {
-    required: true,
-    },
-    email: {
-    required: true,
-    email: true
-    },
-    subject: {
-    minlength: 2,
-    required: true
-    },
-    message: {
-    minlength: 2,
-    required: true
-    }
-    },
-    highlight: function(element) {
-    $(element).closest('.control-group').removeClass('success').addClass('error');
-    },
-    success: function(element) {
-    element
-    .text('OK!').addClass('valid')
-    .closest('.control-group').removeClass('error').addClass('success');
-    },
-	submitHandler: function(form) {
-					// do other stuff for a valid form
-					$.post('reservation_form.php', $("#reservation_form").serialize(), function(data) { // action file is here 
-						$('#reservation_form').html(data);
-					});
-				}
-    });
-    }); // end document.ready
-
-
-//Reservation Form END
 
 // ******************************************************************************************
 // Contact Form Start
 // ******************************************************************************************
 jQuery(document).ready(function($){
-"use strict";	
-  $('#contact_form').validate(
-    {
-    rules: {
-    name: {
-    minlength: 2,
-    required: true
-    },
-	phone: {
-    required: true,
-    },
-    email: {
-    required: true,
-    email: true
-    },
-    subject: {
-    minlength: 2,
-    required: true
-    },
-    message: {
-    minlength: 2,
-    required: true
-    }
-    },
-    highlight: function(element) {
-    $(element).closest('.control-group').removeClass('success').addClass('error');
-    },
-    success: function(element) {
-    element
-    .text('OK!').addClass('valid')
-    .closest('.control-group').removeClass('error').addClass('success');
-    },
-	submitHandler: function(form) {
-					// do other stuff for a valid form
-					$.post('contact_form.php', $("#contact_form").serialize(), function(data) { // action file is here 
-						$('#contact_form').html(data);
-					});
-				}
+	"use strict";	
+  	$('#contact_form').validate(
+    	{
+    		rules: {
+    		name: {
+    			minlength: 2,
+				required: true
+    		},
+    		email: {
+    			required: true,
+    			email: true
+    		},
+    		message: {
+    			minlength: 3,
+    			required: true
+    		}
+    	},
+    	highlight: function(element) {
+    		$(element).closest('.control-group').removeClass('success').addClass('error');
+    	},
+   		success: function(element) {
+    		element
+    			.text('OK!').addClass('valid')
+    			.closest('.control-group').removeClass('error').addClass('success');
+    	},
+		submitHandler: function(form) {
+			// do other stuff for a valid form
+			$.post('contact_form.php', $("#contact_form").serialize(), function(data) { // action file is here 
+				$('#contact_form').html(data);
+			});
+		}
     });
-    }); // end document.ready
+}); // end document.ready
 
 
 //Contact Form END
-
-
-
-
-
 
 //****************************************************************************
 		  		// Google map 
 //****************************************************************************
 jQuery(document).ready(function($){
-		 "use strict";
-			//dragable mobile
-			var drag;
-			if($(window).width()<796){drag=false;}else{drag=true;}
+	"use strict";
+	//dragable mobile
+	var drag;
+	if($(window).width()<796){drag=false;}else{drag=true;}
 			
-		/* googleMaps */
+	/* googleMaps */
 		
-				function map_canvas_loaded() {
-				var latlng = new google.maps.LatLng(mapLatitude,mapLongitude);
+	function map_canvas_loaded() {
+		var latlng = new google.maps.LatLng(mapLatitude,mapLongitude);
 				
-				// setting styles here 
-				var styles = [
-					{
-						"featureType": "landscape",
-						"stylers": [
-							{"hue": "#000"},
-							{"saturation": -100},
-							{"lightness": 40},
-							{"gamma": 1}
-						]
-					},
-					{
-						"featureType": "road.highway",
-						"stylers": [
-							{"hue": color},
-							{"saturation": saturation},
-							{"lightness": 20},
-							{"gamma": 1}
-						]
-					},
-					{
-						"featureType": "road.arterial",
-						"stylers": [
-							{"hue": color},
-							{"saturation": saturation},
-							{"lightness": -10},
-							{"gamma": 1}
-						]
-					},
-					{
-						"featureType": "road.local",
-						"stylers": [
-							{"hue": color},
-							{"saturation": saturation},
-							{"lightness": 20},
-							{"gamma": 1}
-						]
-					},
-					{
-						"featureType": "water",
-						"stylers": [
-							{"hue": "#000"},
-							{"saturation": -100},
-							{"lightness": 15},
-							{"gamma": 1}
-						]
-					},
-					{
-						"featureType": "poi",
-						"stylers": [
-							{"hue": "#000"},
-							{"saturation": -100},
-							{"lightness": 25},
-							{"gamma": 1}
-						]
-					}
-				];		
-				var options = {
-				 center : latlng,
-				 zoom : mapZoom_value,
-				 zoomControlOptions: {
-    				position: google.maps.ControlPosition.LEFT_BOTTOM
-  				 },
-  				 panControlOptions: {
-  					position: google.maps.ControlPosition.LEFT_BOTTOM
-  				 },
-				 styles: styles
-				};
-				var map_canvas = new google.maps.Map(document.getElementById('map_canvas'), options);
-				
-
-			
-				
-				//****************************************************************************
-		  		// marker content 
-				//****************************************************************************
-				var pointer1 = new google.maps.LatLng(marker1_Latitude,marker1_Longitude);
-				
-				var marker1= new google.maps.Marker({
-				 position : pointer1,
-				 map : map_canvas,
-				 icon: marker1_pointerUrl //Custom Pointer URL
-				 });
-				
-				google.maps.event.addListener(marker1,'click',
-				 function() {
-				 var infowindow = new google.maps.InfoWindow(
-				 {content:marker1_content });
-				 infowindow.open(map_canvas,marker1);
-				 });
-				// marker END
+		// setting styles here 
+		var styles = [
+			{
+				"featureType": "landscape",
+				"stylers": [
+					{"hue": "#000"},
+					{"saturation": -100},
+					{"lightness": 40},
+					{"gamma": 1}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"stylers": [
+					{"hue": color},
+					{"saturation": saturation},
+					{"lightness": 20},
+					{"gamma": 1}
+				]
+			},
+			{
+				"featureType": "road.arterial",
+				"stylers": [
+					{"hue": color},
+					{"saturation": saturation},
+					{"lightness": -10},
+					{"gamma": 1}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"stylers": [
+					{"hue": color},
+					{"saturation": saturation},
+					{"lightness": 20},
+					{"gamma": 1}
+				]
+			},
+			{
+				"featureType": "water",
+				"stylers": [
+					{"hue": "#000"},
+					{"saturation": -100},
+					{"lightness": 15},
+					{"gamma": 1}
+				]
+			},
+			{
+				"featureType": "poi",
+				"stylers": [
+					{"hue": "#000"},
+					{"saturation": -100},
+					{"lightness": 25},
+					{"gamma": 1}
+				]
 			}
+		];		
+		
+		var options = {
+			center : latlng,
+			zoom : mapZoom_value,
+			zoomControlOptions: {
+    			position: google.maps.ControlPosition.LEFT_BOTTOM
+  			},
+  			panControlOptions: {
+  				position: google.maps.ControlPosition.LEFT_BOTTOM
+  			},
+			styles: styles
+		};
+		
+		var map_canvas = new google.maps.Map(document.getElementById('map_canvas'), options);
+				
 
-				window.onload = function() {
-				 map_canvas_loaded();
-				};
+		//****************************************************************************
+		// marker content 
+		//****************************************************************************
+		var pointer1 = new google.maps.LatLng(marker1_Latitude,marker1_Longitude);
+				
+		var image_marker = {
+    		url:  marker1_pointerUrl,
+			scaledSize:new google.maps.Size(39,68)
+		};
+		var marker1= new google.maps.Marker({
+			position : pointer1,
+			map : map_canvas,
+			icon: image_marker //Custom Pointer URL
+		});
+	}
+
+	window.onload = function() {
+		map_canvas_loaded();
+	};
 			/* End */
 			
-		});
+});
 
 //Google map end 
-		
-
-
-//****************************************************************************
-		  		//Reservation page Date picker 
-//****************************************************************************
-jQuery(document).ready(function($){
-		 "use strict";
-/* Date Picker */
-  $('.form_datetime').datetimepicker({
-        language:  'en',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		forceParse: 0,
-        showMeridian:0,
-		pickerPosition: "bottom-left"
-    });
-  });
-		
-/* // Date Picker */  
-
 
 //****************************************************************************
 		  		//Home page Promotions options
 //****************************************************************************
 jQuery(document).ready(function($){
-"use strict";
+	"use strict";
   	$('.spmenu1, .spmenu2, .spmenu3, .spmenu4').hover(function() {
   		$(this).addClass('forefront');
   	}, function() {
@@ -607,24 +505,23 @@ jQuery(document).ready(function($){
 
 
 
-
 // toogle options 
 
 $(document).ready(function() {
-"use strict";
+	"use strict";
    	$('.toggle-content').hide();  //hides the toggled content
 
 	$('.toggle-link').click(function () {
 		if ($(this).is('.toggle-close')) {
 			$(this).removeClass('toggle-close').addClass('toggle-open').parent().next('.toggle-content').slideToggle(300);
-  $('#scrolldynamic').getNiceScroll().resize();
+  			$('#scrolldynamic').getNiceScroll().resize();
 			return false;
 		} 
 		
 		else {
 			$(this).removeClass('toggle-open').addClass('toggle-close').parent().next('.toggle-content').slideToggle(300);
 			$(".menuscroll").getNiceScroll().resize();
-			  $('#scrolldynamic').getNiceScroll().resize();
+			$('#scrolldynamic').getNiceScroll().resize();
 			return false;
 		}
 	});			  
@@ -633,35 +530,35 @@ $(document).ready(function() {
 //toogle options end 
 
 
-
 // niceScroll Bar options 
-  $(document).ready(function() {  
+$(document).ready(function() {  
 	"use strict";
+		
 	$(".contentscroll").niceScroll({
-	cursorcolor:niceScrollcursorcolor,
-	touchbehavior:true,
-	scrollspeed:160,
-	mousescrollstep:90,
-	smoothscroll:true,
-	cursorwidth:"6px",
-	cursorborder:"0", 
-	cursordragontouch: true
-});
+		cursorcolor:niceScrollcursorcolor,
+		touchbehavior:true,
+		scrollspeed:160,
+		mousescrollstep:90,
+		smoothscroll:true,
+		cursorwidth:"6px",
+		cursorborder:"0", 
+		cursordragontouch: true
+	});
 
 	$("#menutop").niceScroll({
-	cursorcolor:niceScrollcursorcolor,
-	touchbehavior:true,
-	scrollspeed:140,
-	mousescrollstep:90,
-	smoothscroll:true,
-	cursorwidth:"6px",
-	cursorborder:"0",
-	cursordragontouch: true
-});
+		cursorcolor:niceScrollcursorcolor,
+		touchbehavior:true,
+		scrollspeed:140,
+		mousescrollstep:90,
+		smoothscroll:true,
+		cursorwidth:"6px",
+		cursorborder:"0",
+		cursordragontouch: true
+	});
 
-$(".contentscroll").mouseover(function() {
-$(".contentscroll").getNiceScroll().resize();
-});
+	$(".contentscroll").mouseover(function() {
+		$(".contentscroll").getNiceScroll().resize();
+	});
  
 });
 // niceScroll Bar options end 
@@ -669,55 +566,16 @@ $(".contentscroll").getNiceScroll().resize();
 
 //Preloader
 jQuery(document).ready(function($){
-"use strict";
+	"use strict";
 
-$("body").jpreLoader(
-	  {
+	$("body").jpreLoader({
 		splashID:"#jSplash",
 		showPercentage:!0,
 		autoClose:!0,
 		showSplash: true,
 		splashFunction:function(){
-		$("#circle").delay(1250).animate({opacity:1},700,"linear");
- 	  }
+			$("#circle").delay(1250).animate({opacity:1},700,"linear");
+ 	  	}
 	 })
-
 });
-
-
-/* Video Containers */
-$(".video_containers").fitVids();
-/* //Video Containers */
-
-
-/***************************************************
-		  		   // Portfolio on mouseover opactiy
-***************************************************/	
-
-jQuery(document).ready(function($){
-"use strict";
-
-		jQuery("area[data-rel^='prettyPhoto']").prettyPhoto();
-		jQuery("#portfolio-grid:first a[data-rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'pp_default',slideshow:3000, autoplay_slideshow: true,deeplinking:false});
-		jQuery(".portfolio-grid:gt(0) a[data-rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',slideshow:3000, deeplinking:false});
-		jQuery("#custom_content a[data-rel^='prettyPhoto']:first").prettyPhoto({
-		custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
-		changepicturecallback: function(){ initialize(); }
-		});
-		jQuery("#custom_content a[data-rel^='prettyPhoto']:last").prettyPhoto({
-		custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
-		changepicturecallback: function(){ _bsap.exec(); }
-		});
-});
-//prettyPhoto END
-
-
- //mixitup Portfolio filters
-  $('#portfolio-grid').mixitup({
-    effects: ['fade','scale'],
-    easing: 'snap'
-  });
-//mixitup Portfolio END
-
-
 
