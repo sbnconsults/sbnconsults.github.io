@@ -76,7 +76,7 @@ border-left: 0px solid transparent;
 }
 
 /* Special Menu */
-#lightbox .close, #lightbox2 .close, #lightbox3 .close, #aboutbox .close {background:#f32a2a;}
+#lightbox .close, #lightbox2 .close, #lightbox3 .close {background:#f32a2a;}
 
 #progress { 
 		position: absolute; top: 0; left:0; height: 7px; width: 0px; 

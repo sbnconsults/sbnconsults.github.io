@@ -322,8 +322,14 @@ text-decoration: none;}
  /* Gallery Ends */
 
 @media(max-width: 991px) {
-#slides .cycle-slideshow img{ height:100%;}
-#button{ top:120px;}	
+	#slides .cycle-overlay div{ display:none;}
+	#slides	{min-width:100% !important;}
+	#slides .cycle-slideshow img {
+		width:100%;
+		min-height:1089px;
+		overflow:hidden;
+	}
+	#button{ top:120px;}	
 }
 @media (min-width: 768px) and (max-width: 980px) {
 	.caption1 { font-size:44px; left:10%; /*bottom:40%; margin-bottom:20px;*/}

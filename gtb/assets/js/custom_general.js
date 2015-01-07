@@ -3,26 +3,21 @@
 // ******************************************************************************************
 
 //*********************Google MAP *********************/
-		
 		var color = "#9E2811" // google map background colour
 		var saturation = 100 // 
-		var mapLatitude=40.710892 
-		var mapLongitude=-74.004920//(Fist Value Latitude, Second Value ), get YOUR coordenates here!: http://itouchmap.com/latlong.html
+		var mapLatitude=38.9076858 
+		var mapLongitude=-77.063863//(Fist Value Latitude, Second Value ), get YOUR coordenates here!: http://itouchmap.com/latlong.html
 		var mapZoom_value=16 // Map zoom level parameter only numeric  
 
 
 // Google map marker example 2 locations 
-		//map-marker #1
-		var marker1_Latitude=40.707892 
-		var marker1_Longitude=-74.008920
-		var marker1_content="<h2>The Spice Lounge</h2> Bridge Water, NJ" // marker or  on click content (Info Window) 
+		//map-marker
+		var marker1_Latitude=38.9076858 
+		var marker1_Longitude=-77.063863
+		var marker1_content="<h2>GTown Bites</h2> Washington, DC" // marker or  on click content (Info Window) 
 		var marker1_pointerUrl = 'assets/img/map-marker.png' // set your color pointer here!
 
-		//map-marker #2
-		var marker2_Latitude=40.710892
-		var marker2_Longitude=-74.012920
-		var marker2_content="<h2>The Spice Lounge</h2>San Diego California" // marker or  on click content (Info Window) 
-		var marker2_pointerUrl = 'assets/img/map-marker.png' // set your color pointer here!
+
 
 //********************* Google MAP END *********************/
 
@@ -528,17 +523,22 @@ jQuery(document).ready(function($){
 				];		
 				var options = {
 				 center : latlng,
-				 mapTypeId: google.maps.MapTypeId.ROADMAP,
 				 zoom : mapZoom_value,
+				 zoomControlOptions: {
+    				position: google.maps.ControlPosition.LEFT_BOTTOM
+  				 },
+  				 panControlOptions: {
+  					position: google.maps.ControlPosition.LEFT_BOTTOM
+  				 },
 				 styles: styles
 				};
 				var map_canvas = new google.maps.Map(document.getElementById('map_canvas'), options);
 				
-			
+
 			
 				
 				//****************************************************************************
-		  		// marker 1 content 
+		  		// marker content 
 				//****************************************************************************
 				var pointer1 = new google.maps.LatLng(marker1_Latitude,marker1_Longitude);
 				
@@ -554,32 +554,7 @@ jQuery(document).ready(function($){
 				 {content:marker1_content });
 				 infowindow.open(map_canvas,marker1);
 				 });
-				// marker 1 END
-
-
-
-				//****************************************************************************
-		  		// marker 2 content 
-				//****************************************************************************
-				var pointer2 = new google.maps.LatLng(marker2_Latitude,marker2_Longitude);
-				
-				var marker2= new google.maps.Marker({
-				 position : pointer2,
-				 map : map_canvas,
-				 icon: marker2_pointerUrl //Custom Pointer URL
-				 });
-				
-				google.maps.event.addListener(marker2,'click',
-				 function() {
-				 var infowindow = new google.maps.InfoWindow(
-				 {content:marker2_content });
-				 infowindow.open(map_canvas,marker2);
-				 });
-				// marker 2 END
-				
-				
-				
-
+				// marker END
 			}
 
 				window.onload = function() {
@@ -616,25 +591,6 @@ jQuery(document).ready(function($){
 
 
 //****************************************************************************
-		  		// About US BOX
-//****************************************************************************
-
-$(document).ready(function() {
-	"use strict";
-    var $lightbox = $('#aboutbox');
-        
-    $lightbox.on('shown.bs.modal', function (e) {
-        var $img = $lightbox.find('img');
-            
-        $lightbox.find('.modal-dialog').css({'width': $img.width()});
-        $lightbox.find('.close').removeClass('hidden');
-    });
-});	
-
-// About US BOX END
-
-
-//****************************************************************************
 		  		//Home page Promotions options
 //****************************************************************************
 jQuery(document).ready(function($){
@@ -645,84 +601,6 @@ jQuery(document).ready(function($){
   		$(this).removeClass('forefront');
   	})
 });
-
-
-/* Promotions BOX1 */
-$(document).ready(function() {
-	"use strict";
-
-	var $lightbox = $('#lightbox');
-    $('[data-target="#lightbox"]').on('click', function(event) {
-        var $img = $(this).find('img'), 
-            src = $img.attr('src'),
-            alt = $img.attr('alt'),
-            css = {
-                'maxWidth': $(window).width() - 100,
-                'maxHeight': $(window).height() - 100
-            };
-    
-        $lightbox.find('.close').addClass('hidden');
-        $lightbox.find('img').attr('src', src);
-        $lightbox.find('img').attr('alt', alt);
-        $lightbox.find('img').css(css);
-    });
-    
-    $lightbox.on('shown.bs.modal', function (e) {
-        var $img = $lightbox.find('img');
-            
-        $lightbox.find('.modal-dialog').css({'width': $img.width()});
-        $lightbox.find('.close').removeClass('hidden');
-    });
-});	
-/*   Promotions BOX1 End   */
-
-
-/* Promotions BOX2 */
-$(document).ready(function() {
-"use strict";
-    var $lightbox = $('#lightbox2');
-    
-    $('[data-target="#lightbox2"]').on('click', function(event) {
-        var $img = $(this).find('iframe'), 
-            src = $img.attr('src'),
-            alt = $img.attr('alt'),
-            css = {
-                'maxWidth': $(window).width() - 100,
-                'maxHeight': $(window).height() - 100
-            };
-    
-        $lightbox.find('.close').addClass('hidden');
-        $lightbox.find('iframe').attr('src', src);
-        $lightbox.find('iframe').attr('alt', alt);
-        $lightbox.find('iframe').css(css);
-    });
-    
-    $lightbox.on('shown.bs.modal', function (e) {
-        var $img = $lightbox.find('iframe');
-            
-        $lightbox.find('.modal-dialog').css({'width': $img.width()});
-        $lightbox.find('.close').removeClass('hidden');
-    });
-});
-/*   Promotions BOX2 End   */
-
-
-/* Promotions BOX3 */
-$(document).ready(function() {
-	"use strict";
-    var $lightbox = $('#lightbox3');
-        
-    $lightbox.on('shown.bs.modal', function (e) {
-        var $img = $lightbox.find('img');
-            
-        $lightbox.find('.modal-dialog').css({'width': $img.width()});
-        $lightbox.find('.close').removeClass('hidden');
-    });
-});	
-
-/*   Promotions BOX3 End   */
-
-
 
 
 //Home page Promotions options  END
