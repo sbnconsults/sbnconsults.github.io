@@ -366,7 +366,7 @@ top:0;
 left:0;
 width:100%;
 height:85px;
-line-height:54px;
+line-height:85px;
 z-index:99999;
 display:none;
 }
@@ -379,7 +379,7 @@ display:none;
 	
 #mainheader{
 margin:0 auto;
-line-height:85px;
+line-height:110px;
 background-color:rgba(17, 17, 17, .5);
 width:100%;
 position: fixed;
@@ -387,11 +387,26 @@ z-index: 9999;
 bottom: 15%;
 }
 
-#mainheader .menu-inner{ height:110px;}
-#header .brand, #mainheader .brand { width:200px;}
+#mainheader .menu-inner, 
+#mainheader .brand_icons, 
+#mainheader .brand_icons div { 
+	height:110px;
+}
 
-#mainheader .menu-inner .nav-link img{vertical-align: middle; display:inline-block;  }
-#header .menu-inner .nav-link img{vertical-align: middle; display:inline-block; }
+#header .brand,
+#mainheader .brand { 
+	width:200px;
+}
+
+#mainheader .menu-inner .nav-link img{
+	vertical-align: middle;
+	display:inline-block;  
+}
+
+#header .menu-inner .nav-link img{
+	vertical-align: middle;
+	display:inline-block;
+}
  
 .call_header a:hover{ color:#f32a2a;  cursor:pointer; }
 .call_header a{
@@ -403,22 +418,19 @@ bottom: 15%;
 	padding-left: 50px;
 }
 
+#header .menu-inner,
+#header .brand_icons,
+#header .brand_icons div{
+	height:85px;
+}
 
-
-
-
-#header .brand_icons div {border:solid 1px red;}
-#mainheader .brand_icons div {border:solid 1px blue;}
-
-
-#header .menu-inner{ height:85px;}
-
-#header .brand_icons, #header .brand_icons div{ height: 85px;}
-
-#header .logo a, #header .call_header a{
+#header .logo a,
+#header .call_header a{
 	line-height:85px;
 } 
-#mainheader .logo a, #mainheader .call_header a{
+
+#mainheader .logo a,
+#mainheader .call_header a{
 	line-height:110px; 
 }
 
@@ -468,13 +480,12 @@ letter-spacing:1px;
 }
 
 
-.brand_icons{ overflow:hidden; height: 110px;}
+.brand_icons{ overflow:hidden;}
 
 	
 .brand_icons div{
 	float:left;
-
-	}
+}
 
 li a:hover{
 	color:#ffffff;
@@ -1729,27 +1740,17 @@ margin: auto;}
 @media (min-width: 768px) and (max-width: 980px) {
 .contentscroll {margin-right:23px;}
 
-#mainheader { line-height: 54px;}
-#mainheader .menu-inner{ height:85px;}
-#header .menu-inner{ height:85px;}
-
-#header .logo a, #header .call_header a{
-	line-height:85px;
-} 
-#mainheader .logo a, #mainheader .call_header a{
-	line-height:85px;
+#header .menu-inner, #header .brand_icons, #header .brand_icons div, 
+#mainheader .menu-inner, #mainheader .brand_icons, #mainheader .brand_icons div{ 
+	height:85px;
 }
 
-.brand_icons div{ height: 85px;}
-#header .brand_icons{ height: 85px;}
-#mainheader .brand_icons{ height: 85px;}
+#header, #header .logo a, #header .call_header a,
+#mainheader, #mainheader .logo a, #mainheader .call_header a
+{
+	line-height:85px;
+} 
 
-/*
-#header .menu-inner .nav-link img{padding-top: 13px;}
-#mainheader .menu-inner .nav-link img{padding-top: 10px;}
-#mainheader .menu-inner .call_header a{ line-height:82px;}
-#mainheader .brand a{ line-height:56px;}
-*/
 
 #header{ display:block; }
 .call { font-size: 26px; }
@@ -1759,48 +1760,23 @@ margin: auto;}
 @media (min-width: 481px) and (max-width: 767px) {
 .contentscroll {margin-right:23px;}
 
-#header, #mainheader { line-height: 54px;}
-
-#header .menu-inner, { height:70px;}
-#mainheader .menu-inner{ height:70px;}
-.brand a{ font-size:28px; line-height:52px;}
-
-.logo img{height:52px;}
-
-#header .logo a{
-	line-height:64px;border:solid 1px blue;
-} 
-
-#header .call_header a{
-	line-height:78px;  border:solid 1px blue; 
-} 
-
-#mainheader .logo a{
-	line-height:64px; border:solid 1px red;
-} 
- #mainheader .call_header a{
-	line-height:78px; padding-left:0px; border:solid 1px red;
+#header .menu-inner, #header .brand_icons, #header .brand_icons div, 
+#mainheader .menu-inner, #mainheader .brand_icons, #mainheader .brand_icons div{ 
+	height: 70px;
 }
 
+#header, #header .logo a, #header .call_header a,
+#mainheader, #mainheader .logo a, #mainheader .call_header a
+{
+	line-height: 70px;
+} 
 
-
-.call_header .small-hide{display:none;}
-.call_header a i{font-size:36px;}
-
-
-.brand_icons div{ height: 70px;  }
-#header .brand_icons{ height: 70px;border:solid 1px red;}
-#mainheader .brand_icons{ height: 70px;border:solid 1px blue;}
-
-/*
-#header .menu-inner .nav-link img{padding-top: 10px;}
-#mainheader .menu-inner .nav-link img{padding-top: 10px;}
-#header .brand, #mainheader .brand{ width:160px;}
-
-#mainheader .menu-inner .brand a{ font-size:24px; line-height:52px;}
-#header .menu-inner .brand a{ font-size:24px; line-height:52px;}
-#mainheader .menu-inner .call_header a{ line-height:55px;padding-left:4px;}
-#header .menu-inner .call_header a{  padding-left:1px; line-height:68px; }*/
+.logo img{ height:52px; }
+.brand a{ font-size:28px; line-height:70px;}
+.call_header a{padding-left:0px;padding-right:1px;}
+/*.call_header .small-hide{display:none;}*/
+.call_header a i{font-size:32px;}
+.call_header a{font-size:20px;}
 
 #header{ display:block; }
 .call {font-size: 22px;}
@@ -1827,31 +1803,25 @@ margin: auto;}
 }
 @media (min-width: 321px) and (max-width: 480px) { 
 .contentscroll {margin-right:10px;}
-/*
-.brand a{ font-size:24px; line-height:52px;}
 
-#header .menu-inner{ height:70px;}
-#mainheader .menu-inner{ height:70px;}
-
-#header .logo a, #header .call_header a{
-	line-height:70px;
-} 
-#mainheader .logo a, #mainheader .call_header a{
-	line-height:70px;
+#header .menu-inner, #header .brand_icons, #header .brand_icons div, 
+#mainheader .menu-inner, #mainheader .brand_icons, #mainheader .brand_icons div{ 
+	height: 70px;
 }
 
+#header, #header .logo a, #header .call_header a,
+#mainheader, #mainheader .logo a, #mainheader .call_header a
+{
+	line-height: 70px;
+} 
 
-#header .brand_icons{ height: 70px;}
-#mainheader .brand_icons{ height: 70px;}*/
+.logo img{ height:48px; }
+.brand a{ font-size:26px; line-height:70px;}
 
-/*
-#header .menu-inner .nav-link img{padding-top: 8px;}
-#mainheader .menu-inner .nav-link img{padding-top: 8px;}
-#header .brand, #mainheader .brand{ width:140px;}
 .call_header .small-hide{display:none;}
-.call_header a i{font-size:35px;padding-left:10px;}
-.call_header a{padding:0;margin:0;}
-#mainheader .menu-inner .call_header a{ line-height:78px;} */
+.call_header a { padding-left: 0px;}
+.call_header a i{font-size:32px;}
+
 
 .boxgallery > nav span{ top:55%; height:50px;}
 /*.header_icons{ display:none;} */
@@ -1891,6 +1861,7 @@ h1 { font-size: 23px; padding-bottom:0px; }
 .empty{ display:none;}
 }
 @media (min-width: 240px) and (max-width: 320px) {
+
 /*.container{ background-color:#0000ff;}*/
 
 #header .menu-inner{ height:70px;}
@@ -1904,6 +1875,8 @@ h1 { font-size: 23px; padding-bottom:0px; }
 }
 #header .brand_icons{ height: 70px;}
 #mainheader .brand_icons{ height: 70px;}
+.brand a{ font-size:128px; line-height:52px;}
+
 
 /*
 #header .menu-inner .nav-link img{padding-top: 5px;}
