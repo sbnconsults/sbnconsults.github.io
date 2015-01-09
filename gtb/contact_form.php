@@ -2,7 +2,7 @@
 
  
 //Prefedined Variables  
-$to = "info@sbnconsults.com";
+$to = "nazakik@yahoo.com";
 
 // Email Subject
 $subject = "Contact from your website.";
