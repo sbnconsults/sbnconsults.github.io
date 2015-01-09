@@ -366,7 +366,7 @@ jQuery(document).ready(function($){
     	},
 		submitHandler: function(form) {
 			// do other stuff for a valid form
-			$.post('contact_form.php', $("#contact_form").serialize(), function(data) { // action file is here 
+			$.post('cgi-bin/contact_form.php', $("#contact_form").serialize(), function(data) { // action file is here 
 				$('#contact_form').html(data);
 			});
 		}
