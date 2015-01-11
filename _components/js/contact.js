@@ -22,7 +22,6 @@ jQuery(document).ready(function ($) { // wait until the document is ready
 		}
 
 		if(error == true) {
-			$('#err-form').slideDown('slow');
 			return false;
 		}
 
@@ -34,17 +33,20 @@ jQuery(document).ready(function ($) { // wait until the document is ready
 			data: data_string,
 			timeout: 6000,
 			error: function(request,error) {
+							$('#contactus').slideUp('slow');
+				$('#ajaxsuccess').slideDown('slow');
 				if (error == "timeout") {
 					$('#err-timedout').slideDown('slow');
 				}
 				else {
 					$('#err-state').slideDown('slow');
 					$("#err-state").html('An error occurred: ' + error + '');
-				}
+				};
 			},
 			success: function() {
-				$('#ajax-form').slideUp('slow');
+				$('#contactus').slideUp('slow');
 				$('#ajaxsuccess').slideDown('slow');
+
 			}
 		});
 
