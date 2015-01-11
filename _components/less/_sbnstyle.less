@@ -34,8 +34,6 @@
     100% { opacity: 0; top: 20%;}
 }
 
-@import url(http://fonts.googleapis.com/css?family=Satisfy);
-
 
 /* General
  * ---------*/
@@ -306,6 +304,7 @@ ul.slimmenu li ul {
 
 .collapse-button {
   position: absolute;
+  top:60px;
   right: 5%;
   width: 40px;
   background-image: linear-gradient(to bottom, #151515, #040404);
@@ -530,7 +529,7 @@ ul.slimmenu.collapsed li > ul {
   opacity: .9;
   font-size: 40px;
   line-height: 50px;
-  font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+  font-family: impact;
   position:absolute;
   bottom: 20px;
   z-index: 10;
@@ -1166,8 +1165,9 @@ textarea {
     height:50px;
   }
 
-  .menu-collapser {
-    padding-top:28px;
+  .collapse-button {
+    line-height:96px;
+    top:27px;
   }
 
 }
@@ -1194,8 +1194,9 @@ textarea {
     height:65px;
   }
 
-  .menu-collapser {
-    padding-top:38px;
+   .collapse-button {
+    line-height:96px;
+    top:35px;
   }
 
 }
@@ -1221,6 +1222,11 @@ textarea {
 
   .navheadr-brand img {
     height:75px;
+  }
+
+  .collapse-button {
+    line-height:151px;
+    top:57px;
   }
 
 }
