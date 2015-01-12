@@ -49,15 +49,15 @@
 			</ol>
       		<section class="carousel-inner">
         		<div class="active item">
-          			<img src="images/carousel1.jpg" class="img-responsive" alt="First slide" >
+          			<img src="images/carousel1.jpg" class="img-responsive">
             		<div class="carousel-caption">Clear<br><span class="slow-caption">Elegant</span></div>
         		</div>
     			<div class="item">
-          			<img src="images/carousel2.jpg" class="img-responsive" alt="Second slide" >
+          			<img src="images/carousel2.jpg" class="img-responsive">
           			<div class="carousel-caption">technology<br>solutions</div>
         		</div>
         		<div class="item">
-          			<img src="images/carousel3.jpg" class="img-responsive" alt="Third slide" >
+          			<img src="images/carousel3.jpg" class="img-responsive">
           			<div class="carousel-caption">
             			fine-tuned to meet <br>your business needs
           			</div>
@@ -254,6 +254,7 @@
 						<textarea name="body" id="message" placeholder="Message:"></textarea>
 					</div>
 					<div data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+						<input type="hidden" name="_next" value="" />
 						<div id="button-con"><button class="send_message" id="send"><span data-hover="submit">send</span></button></div>					
 					</div>
 					<div class="clear"></div>
@@ -335,13 +336,19 @@
   			});
  		});
 
-		window.scrollReveal = new scrollReveal();
+		
 	})(jQuery);
 
 
 </script>
 <script src="js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+	(function($) { "use strict";
+		$(window).load(function(){
+			window.scrollReveal = new scrollReveal();
+		});
+	})(jQuery);
+</script>
 <script type="text/javascript" src="ckj/js/template.js"></script>
 <!-- End Document
 ================================================== -->
