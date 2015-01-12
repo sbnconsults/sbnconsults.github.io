@@ -28,9 +28,9 @@
 
 			<ul class="navheadr-nav slimmenu">
 				<li><a href="/index.html" class="mPS2id-clicked" >Home</a></li>
-				<li><a href="#about" >About</a></li>
-				<li><a href="#work">Projects</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#abt" >About</a></li>
+				<li><a href="#wrk">Projects</a></li>
+				<li><a href="#cntct">Contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -82,7 +82,7 @@
        			<img class="icon-circle" src="images/icon1.jpg" alt="about icon image">
         		<h3>We are ...</h3>
         		<p> passionate about using technology to solve business problems and our base is Washington, DC </p>
-        		<p><a class="btn btn-default btn-more" href="#about" data-gal="m_PageScroll2id" data-ps2id-offset="105" role="button" >More About Us &raquo;</a></p>
+        		<p><a class="btn btn-default btn-more" href="#abt" data-gal="m_PageScroll2id" data-ps2id-offset="135" role="button" >More About Us &raquo;</a></p>
       		</div>
 
       		<div class="col-md-4">
@@ -90,14 +90,14 @@
         		<h3>Our projects</h3>
         		<p>From building business sites to mobile applications, we offer solutions to meet the growing demands of our age of technology.
             	Learn more about our past projects and areas of expertise.</p>
-        		<p><a class="btn btn-default btn-more" href="#work" data-gal="m_PageScroll2id" data-ps2id-offset="105" role="button">Read more &raquo;</a></p>
+        		<p><a class="btn btn-default btn-more" href="#wrk" data-gal="m_PageScroll2id" data-ps2id-offset="135" role="button">Read more &raquo;</a></p>
       		</div>
 
       		<div class="col-md-4">
         		<img class="icon-circle" src="images/icon3.jpg" alt="contact icon image" >
         		<h3>Talk to us!</h3>
         		<p>We taylor our products and services to meet your business needs. Let us know what is on your mind.</p>
-        		<p><a class="btn btn-default" href="#contact" data-gal="m_PageScroll2id" data-ps2id-offset="105"  role="button">Contact Us &raquo;</a></p>
+        		<p><a class="btn btn-default" href="#cntct" data-gal="m_PageScroll2id" data-ps2id-offset="135"  role="button">Contact Us &raquo;</a></p>
       		</div>
 
     	</div><!-- .end of container marketing-->
@@ -142,8 +142,8 @@
 -->	
 	
 <section class="about" id="about">
-	<div class="container">
-		<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+	<div class="container" id="abt">
+		<div id="abt" class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 			<h1>About US</h1>
 		</div>
 		<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
@@ -177,13 +177,13 @@
     ================================================== -->
 
 	<section class="work" id="work">
-				<div class="container" >
+				<div class="container" id="wrk">
 			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 				<h1>Projects</h1>
 			</div>
 
 			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
-				<div class="sub-text">featured projects <a href="#contact" data-gal="m_PageScroll2id" data-ps2id-offset="105">you can tell us what you think</a></div>
+				<div class="sub-text">featured projects <a href="#contact" data-gal="m_PageScroll2id" data-ps2id-offset="75">you can tell us what you think</a></div>
 			</div>
 	
 			<div class="two columns"></div>
@@ -214,8 +214,8 @@
     ================================================== -->
 
 	<section class="contact" id="contact">	
-		<div class="container">
-			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
+		<div class="container" id="cntct">
+			<div  class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">
 				<h1>contact us</h1>
 			</div>
 			<div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.5s after 0.1s">	
@@ -314,7 +314,7 @@
 			/* Page Scroll to id fn call */
 			$("ul.slimmenu li a,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
 				highlightSelector:"ul.slimmenu li a",
-				offset: 105,
+				offset: 135,
 				scrollSpeed:1000,
 				scrollEasing: "easeInOutCubic"
 			});
