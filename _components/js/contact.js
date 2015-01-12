@@ -32,6 +32,7 @@ jQuery(document).ready(function ($) { // wait until the document is ready
 			url: $('#ajax-form').attr('action'),
 			data: data_string,
 			timeout: 6000,
+			dataType: 'json',
 			error: function(request,error) {
 				if (error == "timeout") {
 					$('#err-timedout').slideDown('slow');
