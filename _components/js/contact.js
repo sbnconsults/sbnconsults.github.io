@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) { // wait until the document is ready
 			error = true; // change the error state to true
 		}
 
-		var email_compare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
+		var email_compare = /^([A-Za-z0-9_.-]+)@([da-zA-Z.-]+).([a-zA-Z.]{2,6})$/; // Syntax to compare against input
 		var email = $('input#email').val(); // get the value of the input field
 		if (email == "" || email == " ") { // check if the field is empty
 			$('#err-email').fadeIn('slow'); // error - empty
@@ -33,8 +33,6 @@ jQuery(document).ready(function ($) { // wait until the document is ready
 			data: data_string,
 			timeout: 6000,
 			error: function(request,error) {
-							$('#contactus').slideUp('slow');
-				$('#ajaxsuccess').slideDown('slow');
 				if (error == "timeout") {
 					$('#err-timedout').slideDown('slow');
 				}
